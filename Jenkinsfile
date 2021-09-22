@@ -1,6 +1,10 @@
 pipeline {
     agent any
-    def mvnHome = tool name: 'maven-3', type: 'maven'
+    environment {
+        // Install the Maven version configured as "M3" and add it to the path.
+        //maven "M3"
+        mvnHome = tool name: 'MyMaven', type: 'maven'
+    }
     
     stages {
         stage('Build') {
